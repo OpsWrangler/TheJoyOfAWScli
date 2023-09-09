@@ -1,1 +1,1 @@
-# Docs [here](https://gitshawn.github.io/docs-as-code/)
+# View `The Joy of AWS cli` [here](https://opswrangler.github.io/TheJoyOfAWScli/)
