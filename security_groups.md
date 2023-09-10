@@ -1,6 +1,13 @@
+### Describe security group rules
+```
+aws ec2 describe-security-group-rules \
+    --filter Name="group-id",Values="sg-00000"
+    --output=table
+```
+
 ### Add inbound port based rule
 
-```bash
+```
 aws ec2 authorize-security-group-ingress \
     --group-id sg-0000000 \
     --protocol tcp \
