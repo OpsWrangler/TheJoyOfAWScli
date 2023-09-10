@@ -1,13 +1,14 @@
-#### Describe security group rules
-```cli
+Describe security group rules
+
+```bash
 aws ec2 describe-security-group-rules \
     --filter Name="group-id",Values="sg-00000" \
     --output=table
 ```
 
-#### Add security group rule
-#### (Replace protocol / port values here with `-1` to indicate 'all')
-#### (Replace `ingress` with `egress` if needed)
+Add security group rule
+(Replace protocol / port values here with `-1` to indicate 'all')
+(Replace `ingress` with `egress` if needed)
 
 ```bash
 aws ec2 authorize-security-group-ingress \
@@ -16,5 +17,4 @@ aws ec2 authorize-security-group-ingress \
     --port 80 \
     --cidr 0.0.0.0/0
 ```
-
-### Add 
+ 
