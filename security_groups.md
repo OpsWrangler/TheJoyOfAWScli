@@ -1,6 +1,6 @@
 Describe security group rules
 
-```bash
+```Shell
 aws ec2 describe-security-group-rules \
     --filter Name="group-id",Values="sg-00000" \
     --output=table
@@ -9,8 +9,9 @@ aws ec2 describe-security-group-rules \
 Add security group rule
 (Replace protocol / port values here with `-1` to indicate 'all')
 (Replace `ingress` with `egress` if needed)
+(Replace `cidr` with `source-group` for sg to sg)
 
-```bash
+```Shell
 aws ec2 authorize-security-group-ingress \
     --group-id sg-0000000 \
     --protocol tcp \
@@ -18,3 +19,9 @@ aws ec2 authorize-security-group-ingress \
     --cidr 0.0.0.0/0
 ```
  
+Remove security group rule
+```Shell
+aws ec2 revoke-security-group-ingress  \
+	--group-id sg-00000 \
+	--security-group-rule-ids sgr-0000
+``` 
