@@ -20,8 +20,9 @@ aws ec2 authorize-security-group-ingress \
 ```
  
 Remove security group rule
+
 ```sh
 aws ec2 revoke-security-group-ingress  \
-	--group-id sg-00000 \
-	--security-group-rule-ids sgr-0000
+    --group-id sg-00000 \
+    --security-group-rule-ids sgr-0000
 ```
