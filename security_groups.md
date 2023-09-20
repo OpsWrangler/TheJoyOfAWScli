@@ -1,3 +1,12 @@
+Create security group
+
+```sh
+aws ec2 create-security-group \
+--group-name name \
+--description description \
+--vpc-id vpc-0000
+```
+
 Describe security group rules
 
 ```sh
