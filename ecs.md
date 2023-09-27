@@ -31,13 +31,20 @@ aws ecs execute-command \
 filename_on_local_machine
 ```
 
-Add Fargate capacity to an existing cluster
+Describe cluster
+
+```
+aws ecs describe-clusters --cluster cluster_name
+```
+
+Replace existing cluster with Fargate capacity provider, using FARGATE_SPOT primarily
+- The `base` value sets how many tasks will run for that CP, after that base is filled then the weight goes into effect as a balancing strategy
 
 ```
 aws ecs put-cluster-capacity-providers \
 --cluster cluster_name \
 --capacity-providers FARGATE FARGATE_SPOT \
 --default-capacity-provider-strategy \
-capacityProvider=FARGATE,weight=1,base=1 \
-capacityProvider=FARGATE_SPOT,weight=4
+capacityProvider=FARGATE_SPOT,weight=1,base=10 \
+capacityProvider=FARGATE,weight=4
 ```
